@@ -60,4 +60,4 @@ Visit http://127.0.0.1:8000/ to view the API.
 
   Method: GET
   URL: /search/
-  Provide keyword you want to search in the request body
+  Payload: Provide keyword you want to search in the request body
