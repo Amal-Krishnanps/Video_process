@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Videos</title>
+</head>
+<body>
+    <h1>Uploaded Videos</h1>
+    <a href="{% url 'upload_video' %}">Upload a New Video</a>
+    <h2>Recently Uploaded</h2>
+    <ul>
+        {% for video in videos %}
+        <li><a href="{% url 'video_detail' video.id %}">{{ video.title }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

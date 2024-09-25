@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ video.title }}</title>
+</head>
+<body>
+    <h1>{{ video.title }}</h1>
+    <video id="video-player" width="320" height="240" controls>
+        <source src="{{ video.video_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2>Subtitles</h2>
+        {% for subtitle in subtitles  %}
+        {% comment %} <track kind="subtitles" src="{{ subtitle.subtitle_file.url }}" srclang="{{ subtitle.language }}" label="{{ subtitle.language }}"> {% endcomment %}
+        <div>
+            <h3>{{ subtitle.language }}</h3>
+            <pre>{{ subtitle.content }}</pre>
+        </div>
+        {% endfor %}
+    
+</body>
+</html>
